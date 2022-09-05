@@ -1,1 +1,7 @@
-./venv
+./v
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/misc.xml
+/.idea/Platformer.iml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml

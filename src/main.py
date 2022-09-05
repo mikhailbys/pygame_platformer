@@ -15,7 +15,7 @@ def main():
 
     for lvl in level_dict:
         # set up in-game modules
-        timer, left, right, up, hero, entities, animated_entities, monsters, platforms \
+        camera, timer, left, right, up, hero, entities, animated_entities, monsters, platforms \
             = load_level(lvl)
         running = True
         # main game loop
