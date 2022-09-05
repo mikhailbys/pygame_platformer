@@ -21,7 +21,7 @@ def main():
     # Set window title
     pygame.display.set_caption("Mario Game")
     # apply background
-    background_image = pygame.image.load('assets/background/background.jpeg')
+    background_image = pygame.image.load('assets/background/background.jpg')
     #
     is_win = False
 

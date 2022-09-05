@@ -2,6 +2,7 @@ import pyganim as pyganim
 from pygame import *
 from pygame.sprite import Sprite
 
+from src.sprites.Mashroom.mashroom import Mashroom
 from src.sprites.Monster.monster import Monster
 from src.sprites.Player.config import ANIMATION_LEFT, ANIMATION_RIGHT, ANIMATION_DELAY, ANIMATION_STAY, ANIMATION_JUMP_LEFT, \
     ANIMATION_JUMP_RIGHT, ANIMATION_JUMP
@@ -113,7 +114,7 @@ class Player(Sprite):
     def collide(self, x_vel, y_vel, platforms):
         for p in platforms:
             if sprite.collide_rect(self, p):  # is player interact with Sprites
-                if isinstance(p, Spikes) or isinstance(p, Monster):  # is Sprite is Spike/Monster
+                if isinstance(p, Spikes) or isinstance(p, Mashroom):  # is Sprite is Spike/Monster
                     self.lives_count -= 1
                     if self.lives_count > 0:
                         self.restart()

@@ -1,6 +1,7 @@
 import pygame
 
-from src.sprites.blocks import PLATFORM_WIDTH, PLATFORM_HEIGHT, Platform, Teleport
+from src.sprites.Mashroom.mashroom import Mashroom
+from src.sprites.blocks import PLATFORM_WIDTH, PLATFORM_HEIGHT, Platform, Teleport, Ground
 from src.camera import Camera, camera_configure
 from src.levels.level_select import get_level
 from src.sprites.Monster.monster import Monster
@@ -31,6 +32,10 @@ def load_level(level_number):
     x = y = 0  # координаты
     for row in level:  # вся строка
         for col in row:  # каждый символ
+            if col == "=":
+                pf = Ground(x, y)
+                entities.add(pf)
+                platforms.append(pf)
             if col == "-":
                 pf = Platform(x, y)
                 entities.add(pf)
@@ -59,6 +64,11 @@ def load_level(level_number):
     for monster in level_monsters:
         if monster[0] == 'FIRE':  # todo dict
             mn = Monster(monster[1], monster[2], monster[3], monster[4], monster[5], monster[6])
+            entities.add(mn)
+            platforms.append(mn)
+            monsters.add(mn)
+        if monster[0] == 'MASHROOM':  # todo dict
+            mn = Mashroom(monster[1], monster[2], monster[3], monster[4], monster[5], monster[6])
             entities.add(mn)
             platforms.append(mn)
             monsters.add(mn)
